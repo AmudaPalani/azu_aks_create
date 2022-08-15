@@ -8,13 +8,6 @@
                 "description": "The name of the Managed Cluster resource."
             }
         },
-        "location": {
-            "type": "string",
-            "defaultValue": "[resourceGroup().location]",
-            "metadata": {
-                "description": "The Azure location of the AKS resource."
-            }
-        },
         "osDiskSizeGB": {
             "defaultValue": 128,
             "minValue": 0,
@@ -141,7 +134,7 @@
             "type": "Microsoft.ContainerService/managedClusters",
             "name": "[parameters('resourceName')]",
             "apiVersion": "2022-06-01",
-            "location": "[parameters('location')]",
+            "location": "[resourceGroup().location]",
             "identity": {
                 "type": "SystemAssigned"
             },
