@@ -89,27 +89,6 @@
                 "description": "AAD group object ids which should be added to the Kubernetes cluster-admin role"
             },
             "defaultValue": []
-        },
-        "serviceCidr": {
-            "type": "string",
-            "defaultValue": "10.0.0.0/16",
-            "metadata": {
-                "description": "A CIDR notation IP range from which to assign service cluster IPs."
-            }
-        },
-        "dnsServiceIP": {
-            "type": "string",
-            "defaultValue": "10.0.0.10",
-            "metadata": {
-                "description": "Containers DNS server IP address."
-            }
-        },
-        "dockerBridgeCidr": {
-            "type": "string",
-            "defaultValue": "172.17.0.1/16",
-            "metadata": {
-                "description": "A CIDR notation IP for Docker bridge."
-            }
         }
     },
     "variables": {
@@ -170,9 +149,9 @@
                     "networkPlugin": "azure",
                     "networkPolicy": "azure",
                     "loadBalancerSku": "Standard",
-                    "serviceCidr": "[parameters('serviceCidr')]",
-                    "dnsServiceIP": "[parameters('dnsServiceIP')]",
-                    "dockerBridgeCidr": "[parameters('dockerBridgeCidr')]",
+                    "serviceCidr": "10.0.0.0/16",
+                    "dnsServiceIP": "10.0.0.10",
+                    "dockerBridgeCidr": "172.17.0.1/16",
                     "outboundType": "userDefinedRouting"
                 },
                 "apiServerAccessProfile": {
