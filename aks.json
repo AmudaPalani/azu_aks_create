@@ -58,13 +58,6 @@
                 "description": "The version of Kubernetes."
             }
         },
-        "enableHttpApplicationRouting": {
-            "defaultValue": false,
-            "type": "bool",
-            "metadata": {
-                "description": "boolean flag to turn on and off of http application routing"
-            }
-        },
         "maxPods": {
             "defaultValue": 30,
             "type": "int",
@@ -153,7 +146,7 @@
                 },
                 "addonProfiles": {
                     "httpApplicationRouting": {
-                        "enabled": "[parameters('enableHttpApplicationRouting')]"
+                        "enabled": false
                     },
                     "azurepolicy": {
                         "enabled": false,
